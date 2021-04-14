@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Vote>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">全國性公民投票計票結果</h1>
+    <p>about me<a href="https://github.com/asdkmm5050"> github</a>.</p>
+</div>
+
+<table style="width:100%">
+    @*<tr>
+        <th>公投案編號</th>
+        <th>投票權人數</th>
+        <th>同意票</th>
+        <th>不同意票</th>
+        <th>有效票數</th>
+        <th>無效票數</th>
+        <th>投票人數</th>
+        <th>投票率%</th>
+        <th>有效同意票數對投票權人數%</th>
+        <th>投票結果</th>
+    </tr>*@
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Number</td>
+            <td>@item.AllPopulation</td>
+            <td>@item.Agree</td>
+            <td>@item.NotAgree</td>
+            <td>@item.Avaliable</td>
+            <td>@item.NotAvalible</td>
+            <td>@item.RealPopulation</td>
+            <td>@item.VotingRate</td>
+            <td>@item.AgreeToAllRate</td>
+            <td>@item.Result</td>
+        </tr>
+    }
+</table>
+
